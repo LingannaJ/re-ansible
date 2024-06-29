@@ -9,8 +9,8 @@
   #   prompt: enter the wishes
   #   private: false
 
-  vars_files:
-  - varfiles.yaml
+  # vars_files:
+  # - varfiles.yaml
 
   tasks:
   - name: variable prefarance
@@ -23,3 +23,5 @@
       # arguments level run avthundhi
       # prompt
       # Task level
+      # var files
+
