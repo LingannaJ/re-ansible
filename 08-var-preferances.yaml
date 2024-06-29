@@ -1,0 +1,20 @@
+- name: checking variable prefarances
+  hosts: node
+  become: yes
+  vars:
+    wishes: "morning from play level"
+
+  vars_prompt:
+  - name: wishes
+    prompt: enter the wishes
+    private: false
+
+  vars_files:
+  - varfiles.yaml
+  
+  tasks:
+  - name: variable prefarance
+    vars:
+      wishes: "morning from task level"
+    ansible.builtin.debug:
+      msg: "Hi, good {{ wishes }}"
