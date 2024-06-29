@@ -5,7 +5,7 @@
     course: "devops"
   tasks:
   - name: check variables
-    # vars:
-    #   course: "azure"
+    vars:
+      course: "azure"
     ansible.builtin.debug:
       msg: " i am practicing {{ course }}"
