@@ -14,11 +14,12 @@
 
   tasks:
   - name: variable prefarance
-    vars:
-      wishes: "morning from task level"
+    # vars:
+    #   wishes: "morning from task level"
     ansible.builtin.debug:
       msg: "Hi, good {{ wishes }}"
 
 
       # arguments level run avthundhi
       # prompt
+      # Task level
