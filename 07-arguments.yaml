@@ -1,0 +1,7 @@
+- name: prompting variables
+  hosts: node
+  become: yes
+  tasks:
+  - name: prompt checking information
+    ansible.builtin.debug:
+      msg: "hi, my username is: {{ username }}. password is {{ password }}"
