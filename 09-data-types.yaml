@@ -1,0 +1,27 @@
+- name: data types
+  hosts: node
+  become: yes 
+  vars:
+    course: devops
+    tools:
+    - jenkins
+    - aws
+    - ansible
+    experience:
+      jenkins: 2
+      aws: 3
+      ansible: 4
+    project_name: Expense
+    realtime_project: true
+  tasks:
+  - name: datatypes checking
+    ansible.builtin.debug:
+      msg: " hi, am lerning {{ course }}, tools covered: {{ tools}},experience is: {{ experience }}, project name is {{ project_name }},realtime project is: {{ realtime_project }}"
+
+
+
+    #  string----text or numbers
+    #  map {}
+    #  list []
+    #  number----
+    #  boolean----true/false
