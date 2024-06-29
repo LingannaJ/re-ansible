@@ -1,0 +1,9 @@
+- name: creating variables
+  hosts: node
+  become: yes
+  vars_files:
+  - varfiles.yaml
+  tasks:
+  - name: check variables
+    ansible.builtin.debug:
+      msg: "my name is {{ name }}, am from {{ place }}"
