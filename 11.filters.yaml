@@ -1,0 +1,7 @@
+- name: creating variables
+  hosts: node
+  become: yes
+  tasks:
+  - name: check variables
+    ansible.builtin.debug:
+      msg: "my name is {{ name }}"
