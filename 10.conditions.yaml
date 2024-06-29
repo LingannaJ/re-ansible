@@ -1,0 +1,15 @@
+- name: conditions 
+  hosts: node
+  become: yes
+  vars_prompt:
+  - name: number
+    prompt: Enter the number
+    private: false 
+  tasks:
+  - name: given number is less than 10
+    ansible.builtin.debug:
+      msg: " Given number is less than 10"
+  - name: given number is grater than 10
+    ansible.builtin.debug:
+      msg: " Given number is greater than 10"
+  
