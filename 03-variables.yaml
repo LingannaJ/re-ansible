@@ -1,0 +1,11 @@
+- name: creating variables
+  hosts: node
+  become: yes
+  vars:
+    course: "devops"
+  tasks:
+  - name: check variables
+    # vars:
+    #   course: "azure"
+    ansible.builtin.debug:
+      msg: " i am practicing {{ course }}"
