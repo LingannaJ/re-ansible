@@ -11,15 +11,15 @@
     - postfix
     - mysql
 
-- name: installing packages
-  hosts: node
-  become: yes
-  tasks:
-  - name: installing few packages
-    ansible.builtin.dnf:
-      name: "{{ item.name }}"
-      state: "{{ item.state}}"
-    loop:
-    - { name: 'mysql', state: 'absent'}
-    - { name: 'nginx', state: 'latest'}
-    - { name: 'postfix', state: 'absent'}
+# - name: installing packages
+#   hosts: node
+#   become: yes
+#   tasks:
+#   - name: installing few packages
+#     ansible.builtin.dnf:
+#       name: "{{ item.name }}"
+#       state: "{{ item.state}}"
+#     loop:
+#     - { name: 'mysql', state: 'absent'}
+#     - { name: 'nginx', state: 'latest'}
+#     - { name: 'postfix', state: 'absent'}
