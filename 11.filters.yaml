@@ -61,7 +61,7 @@
       msg: " before convering {{ my_dict }}"
   - name: before convering
     ansible.builtin.debug:
-      msg: " before convering {{ my_dict | dict2item }}"
+      msg: " after convering {{ my_dict | dict2items }}"
 
 
 - name: converting list to dictionary # dict means map,item
@@ -78,6 +78,6 @@
       msg: " before convering {{ my_list }}"
   - name: before convering
     ansible.builtin.debug:
-      msg: " before convering {{ my_list | item2dict }}"
+      msg: " before convering {{ my_list | items2dict }}"
 
 
