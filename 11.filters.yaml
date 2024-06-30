@@ -1,7 +1,37 @@
-- name: creating variables
+- name: default variable
   hosts: node
   become: yes
   tasks:
   - name: check variables
     ansible.builtin.debug:
       msg: "my name is {{ name | default ( 'mamatha') }}"
+
+- name: upper case
+  hosts: node
+  become: yes
+  vars: 
+    name: "i am mamatha"
+  tasks:
+  - name: check variables
+    ansible.builtin.debug:
+      msg: "my name is {{ name | upper }}"
+
+- name: lower case
+  hosts: node
+  become: yes
+  vars: 
+    name: "I AM MAMATHA"
+  tasks:
+  - name: check variables
+    ansible.builtin.debug:
+      msg: "my name is {{ name | lower }}"
+
+- name: finding min and max numbers
+  hosts: node
+  become: yes
+  vars:
+    numbers: [10, 30, 40, 90]
+  tasks:
+  - name: find the min and max number
+    ansible.builtin.debug:
+      msg: "The minimum number is: {{ numbers | min }} , maximum number is:{{ numbers | max }}"
