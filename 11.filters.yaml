@@ -12,7 +12,7 @@
   vars: 
     name: "i am mamatha"
   tasks:
-  - name: check variables
+  - name: upper
     ansible.builtin.debug:
       msg: "my name is {{ name | upper }}"
 
@@ -22,7 +22,7 @@
   vars: 
     name: "I AM MAMATHA"
   tasks:
-  - name: check variables
+  - name: lower
     ansible.builtin.debug:
       msg: "my name is {{ name | lower }}"
 
