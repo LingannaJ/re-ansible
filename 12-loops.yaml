@@ -1,25 +1,25 @@
-- name: installing nginx
-  hosts: node
-  become: yes
-  tasks:
-  - name: nginx install
-    ansible.builtin.dnf:
-      name: "{{ item }}"
-      state: latest
-    loop:
-    - nginx
-    - postfix
-    - mysql
-
-# - name: installing packages
+# - name: installing nginx
 #   hosts: node
 #   become: yes
 #   tasks:
-#   - name: installing few packages
+#   - name: nginx install
 #     ansible.builtin.dnf:
-#       name: "{{ item.name }}"
-#       state: "{{ item.state}}"
+#       name: "{{ item }}"
+#       state: latest
 #     loop:
-#     - { name: 'mysql', state: 'absent'}
-#     - { name: 'nginx', state: 'latest'}
-#     - { name: 'postfix', state: 'absent'}
+#     - nginx
+#     - postfix
+#     - mysql
+
+- name: installing packages
+  hosts: node
+  become: yes
+  tasks:
+  - name: installing few packages
+    ansible.builtin.dnf:
+      name: "{{ item.name }}"
+      state: "{{ item.state}}"
+    loop:
+    - { name: 'mysql', state: 'absent'}
+    - { name: 'nginx', state: 'latest'}
+    - { name: 'postfix', state: 'absent'}
