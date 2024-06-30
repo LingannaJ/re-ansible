@@ -35,3 +35,14 @@
   - name: find the min and max number
     ansible.builtin.debug:
       msg: "The minimum number is: {{ numbers | min }} , maximum number is:{{ numbers | max }}"
+
+
+- name: removing duplicate numbers
+  hosts: node
+  become: yes
+  vars:
+    numbers: [ 10,20,20,40,50,50,90 ]
+  tasks:
+  - name: find duplicate num
+    ansible.builtin.debug:
+      msg: "{{ numbers | unique }}" 
