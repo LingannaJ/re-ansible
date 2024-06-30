@@ -14,7 +14,7 @@
   tasks:
   - name: upper
     ansible.builtin.debug:
-      msg: "my name is {{ name | upper }}"
+      msg: "{{ name | upper }}"
 
 - name: lower case
   hosts: node
@@ -24,7 +24,7 @@
   tasks:
   - name: lower
     ansible.builtin.debug:
-      msg: "my name is {{ name | lower }}"
+      msg: "{{ name | lower }}"
 
 - name: finding min and max numbers
   hosts: node
